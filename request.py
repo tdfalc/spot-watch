@@ -7,7 +7,6 @@ import pandas as pd
 
 def _make_request(base_url: str, **kwargs) -> str:
     url = base_url + "&".join([f"{k}={v}" for k, v in kwargs.items()])
-    print(url)
     with requests.get(url) as response:
         html = response.text
     return html

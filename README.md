@@ -3,7 +3,7 @@
 
 Last updated: 2022-08-10 21:07
 
-![Long-term average](./docs/day_ahead_auction.png)
+![results](./docs/day_ahead_auction.png)
 
 ## Outstanding Tasks
 - [ ] Automate retrieval of data

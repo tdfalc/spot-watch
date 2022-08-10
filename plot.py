@@ -5,7 +5,7 @@ import matplotlib.dates as mdates
 
 
 def plot_day_ahead_auction_results(results: pd.DataFrame, directory: Path, market_area: str):
-    fig, ax0 = plt.subplots()
+    fig, ax0 = plt.subplots(figsize=(7, 4))
     ax1 = ax0.twinx()
 
     ax0.plot(results.index, results.price, label="Price", color="C0")
