@@ -5,7 +5,7 @@ from datetime import datetime as dt, timedelta
 import pandas as pd
 
 
-def _make_request(base_url: str, **kwargs):
+def _make_request(base_url: str, **kwargs) -> str:
     url = base_url + "&".join([f"{k}={v}" for k, v in kwargs.items()])
     print(url)
     with requests.get(url) as response:
@@ -13,12 +13,14 @@ def _make_request(base_url: str, **kwargs):
     return html
 
 
-def _trading_date(html: str):
+def _trading_date(html: str) -> dt:
     trading_date = re.findall(f'"filters\[trading_date\]" value="(\S\w+\s\w+\S\s\w+)', html)
     return dt.strptime(trading_date[0], "%d %b. %Y")
 
 
-def request_day_ahead_auction_results(base_url: str, market_area: str, fmt: str = "%Y-%m-%d"):
+def request_day_ahead_auction_results(
+    base_url: str, market_area: str, fmt: str = "%Y-%m-%d"
+) -> pd.DataFrame:
 
     parameters = {
         "market_area": market_area,
