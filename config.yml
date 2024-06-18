@@ -1,3 +1,4 @@
 GENERAL:
   base_url: https://www.epexspot.com/en/market-data?
   market_area: "GB"
+  time_zone: 'Europe/London'
