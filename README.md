@@ -4,10 +4,7 @@
 ![results](./docs/day_ahead_auction.png)
 
 ## Outstanding Tasks
-- [ ] Automate retrieval of data
-- [ ] Save out historial results
-- [ ] Interactive plot
 - [ ] Deploy to web
 - [ ] Add tests
 - [ ] Expand market area
-- [ ] Add NaNs for missign data
+- [ ] Add NaNs for missing data
