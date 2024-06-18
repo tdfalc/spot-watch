@@ -39,7 +39,7 @@ def _plot_day_ahead_auction_results_pyplot(
     lines1, labels1 = ax1.get_legend_handles_labels()
     ax0.legend(lines0 + lines1, labels0 + labels1, loc=0)
 
-    fig.savefig(savedir / "day_ahead_auction", dpi=300, bbox_inches="tight")
+    fig.savefig(savedir / "day_ahead_auction.png", dpi=300, bbox_inches="tight")
 
 
 def _plot_day_ahead_auction_results_plotly(
