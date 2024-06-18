@@ -1,5 +1,5 @@
 # (epex) Spot Watch
-> `spot-watch` is a Python client for retrieving the latest market resylts from the EPEX SPOT Day-Ahead market.
+> `spot-watch` is a Python client for retrieving the latest market results from the EPEX SPOT Day-Ahead market.
 
 ![results](./docs/day_ahead_auction.png)
 
