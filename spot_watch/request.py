@@ -46,9 +46,8 @@ def request_day_ahead_auction_results(
     columns = {"Volume(MWh)": "volume", "Price(£/MWh)": "price"}
 
     df = pd.read_html(html)[0]
-    df.columns = [col.replace(" ", "") for col in df.columns]
     df.columns = df.columns.get_level_values(-1)
-    print(df.columns)
+    df.columns = [col.replace(" ", "") for col in df.columns]
     df = df.loc[:, columns.keys()].rename(columns=columns)
     df.convert_dtypes()
 
