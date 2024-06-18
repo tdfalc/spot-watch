@@ -8,4 +8,5 @@
 - [ ] Save out historial results
 - [ ] Interactive plot
 - [ ] Deploy to web
+- [ ] Add tests
 - [ ] Expand market area
