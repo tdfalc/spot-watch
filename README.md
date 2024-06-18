@@ -10,3 +10,4 @@
 - [ ] Deploy to web
 - [ ] Add tests
 - [ ] Expand market area
+- [ ] Add NaNs for missign data
