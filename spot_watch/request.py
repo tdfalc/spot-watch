@@ -1,6 +1,6 @@
 import requests
 from datetime import datetime as dt, timedelta
-from pathlib import Path
+from io import StringIO
 
 import pandas as pd
 import pytz
@@ -10,7 +10,7 @@ def _make_request(base_url: str, **kwargs) -> str:
     url = base_url + "&".join([f"{k}={v}" for k, v in kwargs.items()])
     with requests.get(url) as response:
         html = response.text
-    return html
+    return StringIO(html)
 
 
 def _get_delivery_date(time_zone: str) -> dt:
@@ -43,7 +43,7 @@ def request_day_ahead_auction_results(
 
     html = _make_request(base_url, **parameters)
 
-    columns = {"Volume(MWh)": "volume", "Price(£/MWh)": "price"}
+    columns = {"Volume (MWh)": "volume", "Price (£/MWh)": "price"}
 
     df = pd.read_html(html)[0]
     df.columns = df.columns.get_level_values(-1)
@@ -53,7 +53,7 @@ def request_day_ahead_auction_results(
     auction_start = _convert_to_utc(delivery_date)
     auction_end = auction_start + timedelta(hours=len(df) - 1)
 
-    df = df.set_index(pd.date_range(auction_start, auction_end, freq="1H"))
+    df = df.set_index(pd.date_range(auction_start, auction_end, freq="1h"))
     df.index.name = "date_start"
 
     return df

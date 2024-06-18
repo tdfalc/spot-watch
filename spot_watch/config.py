@@ -7,7 +7,7 @@ from omegaconf.dictconfig import DictConfig
 
 @lru_cache(maxsize=1)
 def _load_config() -> DictConfig:
-    config_file = Path(__file__).parent / "config.yml"
+    config_file = Path(__file__).parent.parent / "config.yml"
     config = OmegaConf.load(config_file)
     return config  # type: ignore
 

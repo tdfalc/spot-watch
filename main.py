@@ -3,9 +3,9 @@ import os
 
 import pandas as pd
 
-from config import get_config
-from request import request_day_ahead_auction_results
-from plot import plot_day_ahead_auction_results
+from spot_watch.config import get_config
+from spot_watch.request import request_day_ahead_auction_results
+from spot_watch.plot import plot_day_ahead_auction_results
 
 
 def save_day_ahead_auction_results(df: pd.DataFrame, savedir: Path) -> None:
