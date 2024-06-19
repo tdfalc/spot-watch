@@ -16,12 +16,12 @@ jobs:
       run: pipx install poetry==1.7.1
 
     - name: Install python
-        uses: actions/setup-python@v5
-        with:
+      uses: actions/setup-python@v5
+      with:
           python-version: '3.11'
 
     - name: Install python dependencies
-        run: poetry install
+      run: poetry install
         
     - name: Run Python script
       run: poetry run python main.py
