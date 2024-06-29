@@ -15,6 +15,7 @@ omegaconf = "^2.3.0"
 lxml = "^5.2.2"
 requests = "^2.32.3"
 plotly = "^5.22.0"
+html5lib = "^1.1"
 
 
 [build-system]
